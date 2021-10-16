@@ -11,23 +11,22 @@ public class Employee {
 	private static final int CNP_INDEX = 2;
 	private static final int DIDACTIC_FUNCTION_INDEX = 3;
 	private static final int SALARY_INDEX = 4;
-	private static final int ID = 5;
-	private int id;
-	private String nume;/** The last name of the employee */
+	private int employeeId;
+	private String nume;	/** The last name of the employee */
 	private String firstName; /** The first name of the employee */
 	private String cnp; /** The unique id of the employee */
 	private DidacticFunction function; /** The didactic function of the employee inside the university */
 	private Double salary; /** The salary of the employee */
-	
+
 	/**
 	 * Default constructor for employee
 	 */
 	public Employee() {
-		this.firstName = "";
-		this.nume  = "";
-		this.cnp       = "";
-		this.function  = DidacticFunction.ASISTENT;
-		this.salary    = 0.0d;
+		this.firstName 	= "";
+		this.nume		= "";
+		this.cnp       	= "";
+		this.function  	= DidacticFunction.ASISTENT;
+		this.salary    	= 0.0d;
 	}
 	
 	/**
@@ -41,12 +40,12 @@ public class Employee {
 		this.salary    = salary;
 	}
 	
-	public int getId() {
-		return id;
+	public int getEmployeeId() {
+		return employeeId;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setEmployeeId(int employeeId) {
+		this.employeeId = employeeId;
 	}
 
 	public String getFirstName() {
@@ -97,7 +96,7 @@ public class Employee {
 		employee += cnp + ";";
 		employee += function.toString() + ";";
 		employee += salary + ";";
-		employee += id;
+		employee += employeeId;
 		return employee;
 	}
 	
@@ -157,8 +156,7 @@ public class Employee {
 				employee.setFunction(DidacticFunction.CONFERENTIAR);
 
 			employee.setSalary(Double.valueOf(attributes[SALARY_INDEX]));
-			//employee.setId(Integer.valueOf(attributes[ID]));
-			employee.setId(Integer.valueOf(line));
+			employee.setEmployeeId(Integer.valueOf(line));
 
 			if (!validator.isValid(employee)) {
 				throw new EmployeeException("Invalid line at: " + line);

@@ -3,7 +3,6 @@ package AngajatiApp.main;
 import AngajatiApp.controller.DidacticFunction;
 import AngajatiApp.model.Employee;
 import AngajatiApp.repository.EmployeeImpl;
-//import repository.EmployeeMock;
 import AngajatiApp.repository.EmployeeRepositoryInterface;
 
 import java.util.Scanner;
@@ -11,9 +10,9 @@ import java.util.Scanner;
 import AngajatiApp.controller.EmployeeController;
 
 //functionalitati
-//i.	 adaugarea unui nou angajat (nume, prenume, CNP, functia didactica, salariul de incadrare);
-//ii.	 modificarea functiei didactice (asistent/lector/conferentiar/profesor) a unui angajat;
-//iii.	 afisarea salariatilor ordonati descrescator dupa salariu si crescator dupa varsta (CNP).
+//i. adaugarea unui nou angajat (nume, prenume, CNP, functia didactica, salariul de incadrare)
+//ii. modificarea functiei didactice (asistent/lector/conferentiar/profesor) a unui angajat
+//iii. afisarea salariatilor ordonati descrescator dupa salariu si crescator dupa varsta (CNP)
 public class StartApp {
 	
 	private static Scanner scanner;

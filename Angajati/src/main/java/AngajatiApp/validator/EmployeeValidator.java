@@ -5,7 +5,9 @@ import AngajatiApp.model.Employee;
 
 public class EmployeeValidator {
 
-	public EmployeeValidator(){}
+	public EmployeeValidator(){
+		//should be empty because is a constructor without parameters
+	}
 
 	public boolean isValid(Employee employee) {
 		return isFirstNameValid(employee) 

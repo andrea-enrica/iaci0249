@@ -15,13 +15,14 @@ public class EmployeeMock implements EmployeeRepositoryInterface {
 	public EmployeeMock() {
 		employeeValidator = new EmployeeValidator();
 		employeeList = new ArrayList<Employee>();
+		final String cnpValue = "1234567890876";
 		
-		Employee Ionel = new Employee("Marius", "Pacuraru", "1234567890876", DidacticFunction.ASISTENT, 2500d);
-		Employee Mihai = new Employee("Ion", "Dumitrescu", "1234567890876", DidacticFunction.LECTURER, 2500d);
-		Employee Ionela = new Employee("Gicu", "Ionescu", "1234567890876", DidacticFunction.LECTURER, 2500d);
-		Employee Mihaela = new Employee("Dodel", "Pacuraru", "1234567890876", DidacticFunction.ASISTENT, 2500d);
-		Employee Vasile = new Employee("Dorel", "Georgescu", "1234567890876", DidacticFunction.TEACHER, 2500d);
-		Employee Marin   = new Employee("Larson", "Puscas", "1234567890876", DidacticFunction.TEACHER,  2500d);
+		Employee Ionel = new Employee("Marius", "Pacuraru", cnpValue, DidacticFunction.ASISTENT, 2500d);
+		Employee Mihai = new Employee("Ion", "Dumitrescu", cnpValue, DidacticFunction.LECTURER, 2500d);
+		Employee Ionela = new Employee("Gicu", "Ionescu", cnpValue, DidacticFunction.LECTURER, 2500d);
+		Employee Mihaela = new Employee("Dodel", "Pacuraru", cnpValue, DidacticFunction.ASISTENT, 2500d);
+		Employee Vasile = new Employee("Dorel", "Georgescu", cnpValue, DidacticFunction.TEACHER, 2500d);
+		Employee Marin   = new Employee("Larson", "Puscas", cnpValue, DidacticFunction.TEACHER,  2500d);
 		
 		employeeList.add(Ionel);
 		employeeList.add(Mihai);
@@ -57,7 +58,7 @@ public class EmployeeMock implements EmployeeRepositoryInterface {
 		if (employee!=null) {
 			int i = 0;
 			while (i < employeeList.size()) {
-				if (employeeList.get(i).getId() == employee.getId())
+				if (employeeList.get(i).getEmployeeId() == employee.getEmployeeId())
 					employeeList.get(i).setFunction(newFunction);
 				i++;
 			}

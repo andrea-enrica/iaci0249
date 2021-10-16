@@ -24,8 +24,8 @@ public class EmployeeImpl implements EmployeeRepositoryInterface {
 	}
 
 	@Override
-	public boolean addEmployee(Employee employee) {
-		employee.setId(employeeList.size());
+	public boolean addEmployee(Employee employee) throws IOException {
+		employee.setEmployeeId(employeeList.size());
 		if (employeeValidator.isValid(employee)) {
 			BufferedWriter bw = null;
 			try {
@@ -38,8 +38,10 @@ public class EmployeeImpl implements EmployeeRepositoryInterface {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
+			bw.close();
 		}
 		return false;
+
 	}
 
 	@Override
@@ -53,18 +55,21 @@ public class EmployeeImpl implements EmployeeRepositoryInterface {
 			String line;
 			int counter = 0;
 			while ((line = br.readLine()) != null) {
-				try {
-					final Employee employee = Employee.getEmployeeFromString(line, counter);
-					employeeList.add(employee);
-					//counter++;
-				} catch (EmployeeException ex) {
-					System.err.println(ERROR_WHILE_READING_MSG + ex.toString());
-				}
+				extracted(employeeList, line, counter);
 			}
 		} catch (IOException e) {
 			System.err.println(ERROR_WHILE_READING_MSG + e);
 		} 
 		return employeeList;
+	}
+
+	private void extracted(List<Employee> employeeList, String line, int counter) {
+		try {
+			final Employee employee = Employee.getEmployeeFromString(line, counter);
+			employeeList.add(employee);
+		} catch (EmployeeException ex) {
+			System.err.println(ERROR_WHILE_READING_MSG + ex.toString());
+		}
 	}
 
 	@Override
@@ -77,16 +82,14 @@ public class EmployeeImpl implements EmployeeRepositoryInterface {
 		List<Employee> employeeSortedList = new ArrayList<Employee>(employeeList);
 		Collections.copy(employeeSortedList, employeeList);
 		Collections.sort(employeeSortedList, new AgeCriteria());
-		//System.out.println(employeeSortedList);
 		Collections.sort(employeeSortedList, new SalaryCriteria());
-		//System.out.println(employeeSortedList);
 		return employeeSortedList;
 	}
 
 	@Override
 	public Employee findEmployeeById(int idOldEmployee) {
 		for (Employee employee : employeeList) {
-			if (employee.getId() == idOldEmployee) {
+			if (employee.getEmployeeId() == idOldEmployee) {
 				return employee;
 			}
 		}
