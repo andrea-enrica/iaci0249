@@ -11,7 +11,7 @@ public class Employee {
 	private static final int CNP_INDEX = 2;
 	private static final int DIDACTIC_FUNCTION_INDEX = 3;
 	private static final int SALARY_INDEX = 4;
-	private int employeeId;
+	private Integer employeeId;
 	private String nume;	/** The last name of the employee */
 	private String firstName; /** The first name of the employee */
 	private String cnp; /** The unique id of the employee */
@@ -44,7 +44,7 @@ public class Employee {
 		return employeeId;
 	}
 
-	public void setEmployeeId(int employeeId) {
+	public void setEmployeeId(Integer employeeId) {
 		this.employeeId = employeeId;
 	}
 

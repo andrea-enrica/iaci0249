@@ -8,7 +8,7 @@ import AngajatiApp.model.Employee;
 
 public interface EmployeeRepositoryInterface {
 
-	boolean addEmployee(Employee employee) throws IOException;
+	boolean addEmployee(Employee employee) throws IOException, Exception;
 	void modifyEmployeeFunction(Employee employee, DidacticFunction newFunction);
 	List<Employee> getEmployeeList();
 	List<Employee> getEmployeeByCriteria();

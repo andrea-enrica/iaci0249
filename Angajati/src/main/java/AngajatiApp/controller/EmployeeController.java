@@ -16,7 +16,7 @@ public class EmployeeController {
 		this.employeeView = new EmployeeView();
 	}
 	
-	public void addEmployee(Employee employee) {
+	public void addEmployee(Employee employee) throws Exception {
 		employeeRepository.addEmployee(employee);
 	}
 	

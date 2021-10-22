@@ -17,7 +17,7 @@ public class StartApp {
 	
 	private static Scanner scanner;
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		EmployeeRepositoryInterface employeesRepository = new EmployeeImpl();
 		EmployeeController employeeController = new EmployeeController(employeesRepository);
 		scanner = new Scanner(System.in);

@@ -2,6 +2,7 @@ package AngajatiApp.repository;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 
 import AngajatiApp.controller.DidacticFunction;
 import AngajatiApp.model.Employee;
@@ -34,7 +35,7 @@ public class EmployeeMock implements EmployeeRepositoryInterface {
 
 	/**
 	 * adauga un angajat in repository
-	 * @param employee - un angajat cu atributele id, nlastName, firstName, cnp,
+	 * @param employee - un angajat cu atributele id, lastName, firstName, cnp,
 	 *                 function, salary;
 	 * @return boolean - false daca employee nu este valid
 	 */
