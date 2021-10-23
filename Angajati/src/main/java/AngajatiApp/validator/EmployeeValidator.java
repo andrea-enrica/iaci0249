@@ -14,7 +14,15 @@ public class EmployeeValidator {
 				&& isLastNameValid(employee) 
 				&& isCnpValid(employee) 
 				&& isFunctionValid(employee) 
-				&& isSalaryValid(employee);
+				&& isSalaryValid(employee)
+				&& isEmployeeIdValid(employee);
+	}
+
+	private boolean isEmployeeIdValid(Employee employee) {
+		if(employee.getEmployeeId() != null) {
+			return employee.getEmployeeId() > 0;
+		}
+		return false;
 	}
 
 	private boolean isSalaryValid(Employee employee) {

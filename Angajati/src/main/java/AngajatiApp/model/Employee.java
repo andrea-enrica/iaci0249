@@ -40,7 +40,7 @@ public class Employee {
 		this.salary    = salary;
 	}
 	
-	public int getEmployeeId() {
+	public Integer getEmployeeId() {
 		return employeeId;
 	}
 

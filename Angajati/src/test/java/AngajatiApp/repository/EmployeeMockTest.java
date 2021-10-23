@@ -35,11 +35,11 @@ class EmployeeMockTest {
     @Test
     void addEmployeeTC1() {
         try{
-            employeeMock.addEmployee(employee);
-            assert (true);      // nu s-a aruncat exceptie;
+            assert (true);
+            assertEquals(true, employeeMock.addEmployee(employee));
             assertEquals(employeesNumber + 1, employeeMock.getEmployeeList().size());
         }catch(Exception e){
-            assert (false);     // nu s-a prins exceptia;
+            assert (false);
         }
     }
 
@@ -48,8 +48,8 @@ class EmployeeMockTest {
         try {
             employee.setEmployeeId(2);
             employee.setSalary(-1.0);
-            employeeMock.addEmployee(employee);
-            assert (true);
+            assertEquals(false, employeeMock.addEmployee(employee));
+            assert(true);
         } catch(Exception e) {
             assert (false);
             assertEquals(employeesNumber, employeeMock.getEmployeeList().size());
@@ -61,7 +61,7 @@ class EmployeeMockTest {
         try {
             employee.setEmployeeId(3);
             employee.setCnp("18712013354711");
-            employeeMock.addEmployee(employee);
+            assertEquals(false, employeeMock.addEmployee(employee));
             assert (true);
         } catch(Exception e) {
             assert (false);
@@ -74,7 +74,7 @@ class EmployeeMockTest {
         try {
             employee.setEmployeeId(4);
             employee.setCnp("187120133547");
-            employeeMock.addEmployee(employee);
+            assertEquals(false, employeeMock.addEmployee(employee));
             assert (true);
         } catch(Exception e) {
             assert (false);
@@ -86,7 +86,7 @@ class EmployeeMockTest {
     void addEmployeeTC5() {
         try {
             employee.setEmployeeId(null);
-            employeeMock.addEmployee(employee);
+            assertEquals(false, employeeMock.addEmployee(employee));
             assert (true);
         } catch(Exception e) {
             assert (false);
@@ -98,7 +98,7 @@ class EmployeeMockTest {
     void addEmployeeTC6() {
         try {
             employee.setEmployeeId(-2);
-            employeeMock.addEmployee(employee);
+            assertEquals(false, employeeMock.addEmployee(employee));
             assert (true);
         } catch(Exception e) {
             assert (false);
@@ -110,7 +110,7 @@ class EmployeeMockTest {
     void addEmployeeTC7() {
         try {
             employee.setEmployeeId(0);
-            employeeMock.addEmployee(employee);
+            assertEquals(false, employeeMock.addEmployee(employee));
             assert (true);
         } catch(Exception e) {
             assert (false);
@@ -123,7 +123,7 @@ class EmployeeMockTest {
         try {
             employee.setEmployeeId(5);
             employee.setSalary(0d);
-            employeeMock.addEmployee(employee);
+            assertEquals(false, employeeMock.addEmployee(employee));
             assert (true);
         } catch(Exception e) {
             assert (false);
@@ -136,7 +136,7 @@ class EmployeeMockTest {
         try {
             employee.setEmployeeId(6);
             employee.setSalary(1d);
-            employeeMock.addEmployee(employee);
+            assertEquals(true, employeeMock.addEmployee(employee));
             assert (true);
             assertEquals(employeesNumber + 1, employeeMock.getEmployeeList().size());
         } catch(Exception e) {
@@ -149,7 +149,7 @@ class EmployeeMockTest {
         try {
             employee.setEmployeeId(7);
             employee.setSalary(2d);
-            employeeMock.addEmployee(employee);
+            assertEquals(true, employeeMock.addEmployee(employee));
             assert (true);
             assertEquals(employeesNumber + 1, employeeMock.getEmployeeList().size());
         } catch(Exception e) {
