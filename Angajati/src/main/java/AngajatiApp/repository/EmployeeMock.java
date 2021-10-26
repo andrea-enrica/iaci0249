@@ -21,10 +21,17 @@ public class EmployeeMock implements EmployeeRepositoryInterface {
 		Employee Ionel = new Employee("Marius", "Pacuraru", cnpValue, DidacticFunction.ASISTENT, 2500d);
 		Employee Mihai = new Employee("Ion", "Dumitrescu", cnpValue, DidacticFunction.LECTURER, 2500d);
 		Employee Ionela = new Employee("Gicu", "Ionescu", cnpValue, DidacticFunction.LECTURER, 2500d);
-		Employee Mihaela = new Employee("Dodel", "Pacuraru", cnpValue, DidacticFunction.ASISTENT, 2500d);
+		Employee Mihaela = new Employee("Dorel", "Pacuraru", cnpValue, DidacticFunction.ASISTENT, 2500d);
 		Employee Vasile = new Employee("Dorel", "Georgescu", cnpValue, DidacticFunction.TEACHER, 2500d);
 		Employee Marin   = new Employee("Larson", "Puscas", cnpValue, DidacticFunction.TEACHER,  2500d);
-		
+
+		Ionel.setEmployeeId(0);
+		Mihai.setEmployeeId(1);
+		Ionela.setEmployeeId(2);
+		Mihaela.setEmployeeId(3);
+		Vasile.setEmployeeId(4);
+		Marin.setEmployeeId(5);
+
 		employeeList.add(Ionel);
 		employeeList.add(Mihai);
 		employeeList.add(Ionela);
@@ -55,7 +62,6 @@ public class EmployeeMock implements EmployeeRepositoryInterface {
 	 */
 	@Override
 	public void modifyEmployeeFunction(Employee employee, DidacticFunction newFunction) {
-
 		if (employee!=null) {
 			int i = 0;
 			while (i < employeeList.size()) {
@@ -79,7 +85,11 @@ public class EmployeeMock implements EmployeeRepositoryInterface {
 
 	@Override
 	public Employee findEmployeeById(int idOldEmployee) {
-		// TODO Auto-generated method stub
+		for (Employee employee : employeeList) {
+			if (employee.getEmployeeId() == idOldEmployee) {
+				return employee;
+			}
+		}
 		return null;
 	}
 

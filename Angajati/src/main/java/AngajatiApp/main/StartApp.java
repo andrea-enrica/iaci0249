@@ -45,7 +45,7 @@ public class StartApp {
 				employeeController.modifyEmployee(oldEmployee, getDidacticFunction(newFunction));
 				break;
 			case 3:
-				for(Employee employeeItem : employeeController.getSortedEmployeeList())
+				for(Employee employeeItem : employeeController.getEmployeesList())
 				{
 					System.out.println(employeeItem.toString());
 				}

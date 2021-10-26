@@ -156,4 +156,28 @@ class EmployeeMockTest {
             assert (false);
         }
     }
+
+    @Test
+    void modifyEmployeeFunctionTC1() {
+        DidacticFunction newFunction = null;
+        employeeMock.modifyEmployeeFunction(null, newFunction.CONFERENTIAR);
+//        assertEquals();
+    }
+
+    @Test
+    void modifyEmployeeFunctionTC2() {
+        DidacticFunction function = null;
+        Employee employee = new Employee("Mariana", "Hutanu", "1234567890876", function.LECTURER, 2500d);
+        employee.setEmployeeId(6);
+        employeeMock.modifyEmployeeFunction(employee, function.CONFERENTIAR);
+        assertEquals(null, employeeMock.findEmployeeById(6));
+        assertEquals(6, employeeMock.getEmployeeList().size(), "Employee list size does not match");
+    }
+
+    @Test
+    void modifyEmployeeFunctionTC3() {
+        DidacticFunction function = null;
+        employeeMock.modifyEmployeeFunction(employeeMock.findEmployeeById(3), function.CONFERENTIAR);
+        assertEquals(function.CONFERENTIAR, employeeMock.findEmployeeById(3).getFunction());
+    }
 }
