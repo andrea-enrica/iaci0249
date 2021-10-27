@@ -6,6 +6,8 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class EmployeeMockTest {
@@ -161,7 +163,11 @@ class EmployeeMockTest {
     void modifyEmployeeFunctionTC1() {
         DidacticFunction newFunction = null;
         employeeMock.modifyEmployeeFunction(null, newFunction.CONFERENTIAR);
-//        assertEquals();
+        List<Employee> employees = employeeMock.getEmployeeList();
+        for (Employee employee : employees) {
+            assertFalse(employee.getFunction().equals(newFunction.CONFERENTIAR), "Employee function must not be changed!");
+        }
+        assertEquals(6, employeeMock.getEmployeeList().size(), "Employee list size does not match");
     }
 
     @Test
@@ -170,7 +176,7 @@ class EmployeeMockTest {
         Employee employee = new Employee("Mariana", "Hutanu", "1234567890876", function.LECTURER, 2500d);
         employee.setEmployeeId(6);
         employeeMock.modifyEmployeeFunction(employee, function.CONFERENTIAR);
-        assertEquals(null, employeeMock.findEmployeeById(6));
+        assertEquals(null, employeeMock.findEmployeeById(6), "The Employee Id should no be in the list ");
         assertEquals(6, employeeMock.getEmployeeList().size(), "Employee list size does not match");
     }
 
@@ -178,6 +184,6 @@ class EmployeeMockTest {
     void modifyEmployeeFunctionTC3() {
         DidacticFunction function = null;
         employeeMock.modifyEmployeeFunction(employeeMock.findEmployeeById(3), function.CONFERENTIAR);
-        assertEquals(function.CONFERENTIAR, employeeMock.findEmployeeById(3).getFunction());
+        assertEquals(function.CONFERENTIAR, employeeMock.findEmployeeById(3).getFunction(), "The Employee's function must be updated");
     }
 }
