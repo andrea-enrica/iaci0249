@@ -1,0 +1,18 @@
+
+A
+java:S1168S"+Return an empty collection instead of null.(¥¹ï
+M
+java:S1135R"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ
+Z
+java:S1128"DRemove this unused import 'java.util.concurrent.ExecutionException'.(¡£ØÍ
+o
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(å¾¶Ç
+k	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Æßî ûÿÿÿÿ
+f	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(×šËÏ
+f	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¸—³ˆ
+f	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÈŞÉÍ
+f	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Â®•
+k	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(£ê§¾úÿÿÿÿ
+R
+java:S4973D"<Strings and Boxed types should be compared using "equals()".(ß«¸”
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(©¦ºÒûÿÿÿÿ

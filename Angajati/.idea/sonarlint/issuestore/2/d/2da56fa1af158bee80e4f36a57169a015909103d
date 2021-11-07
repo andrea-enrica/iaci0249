@@ -1,0 +1,14 @@
+
+<
+java:S1170"!Make this final field static too.(Éı®Çùÿÿÿÿ
+V
+java:S11175"@Rename "employeeList" which hides the field declared at line 20.(ÍÍÄÄ
+N	java:S106="9Replace this use of System.out or System.err by a logger.(ÿÉ›º
+S	java:S106G"9Replace this use of System.out or System.err by a logger.(ÕÄš€ûÿÿÿÿ
+o
+java:S22935"YReplace the type specification in this constructor call with the diamond operator ("<>").(ÍÍÄÄ
+t
+java:S2293R"YReplace the type specification in this constructor call with the diamond operator ("<>").(µ»Ü‹úÿÿÿÿ
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(©¦ºÒûÿÿÿÿ
+V
+java:S2259)"@A "NullPointerException" could be thrown; "bw" is nullable here.(÷¹ª
